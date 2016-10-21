@@ -12,7 +12,8 @@ const lib = {
 		mongoDb:require('../config/mongoDb')
 	},
 	odm:{
-		Exchange:require('../lib/odm/Exchange')
+		Exchange:require('../lib/odm/Exchange'),
+		Account:require('../lib/odm/Account')
 	},
 	log:require('../lib/log'),
 	mongoDb:require('../lib/mongoDb')
@@ -82,6 +83,8 @@ lib.deps.co(function*() {
 		}
 
 		yield db.collection(lib.odm.Exchange.COLLECTION).createIndex({name:1}, {name:'exchange.name', unique:true});
+		yield db.collection(lib.odm.Account.COLLECTION).createIndex({name:'text'}, {name:'account.name'});
+		yield db.collection(lib.odm.Account.COLLECTION).createIndex({description:'text'}, {name:'account.description'});
 	} finally {
 		yield db.close();
 	}
