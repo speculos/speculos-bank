@@ -1,0 +1,20 @@
+{
+    "parserOptions":{
+        "ecmaVersion":6,
+        "sourceType":"module",
+        "ecmaFeatures":{
+            "impliedStrict":true
+        }
+    },
+    "env":{
+        "node":true,
+        "es6":true
+    },
+    "extends":"eslint:recommended",
+    "rules":{
+        "indent":["error", "tab"],
+        "semi":["error", "always"],
+        "curly":["error", "all"],
+        "eol-last":["error", "always"]
+    }
+}
